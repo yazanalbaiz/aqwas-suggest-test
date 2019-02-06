@@ -1,0 +1,23 @@
+@font-face {
+    font-family: 'Cocon';
+    src: url('../fonts/coconnextarabic-light.ttf');
+}
+
+* {
+    font-family: 'Cocon', sans-serif;
+}
+.App {
+    width: 100vw;
+    height: 100vh;
+}
+
+.app_background {
+    background-color: #2f6063;
+}
+
+.map-component {
+height: 63% !important;
+}
+.map-component > div{
+    height: 400px !important;
+    }
