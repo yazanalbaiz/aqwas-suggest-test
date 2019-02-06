@@ -10,7 +10,7 @@ This repo is for my development test at Aqwas.
 
 It contains a simple web application using ReactJS and Redux.
 
-The app is for suggesting random restaurants to the user based on his location.
+The app is for suggesting random restaurants to the user based on thier location.
 <div style="text-align:center;"> 
     <img src="https://is3-ssl.mzstatic.com/image/thumb/Purple60/v4/f6/e3/93/f6e39334-b436-6aa9-3aa3-87be02b6f57a/pr_source.png/300x0w.png">
 </div>
