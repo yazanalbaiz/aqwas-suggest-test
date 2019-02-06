@@ -4,7 +4,7 @@
   "repository": "https://github.com/yazanalbaiz/aqwas-suggest-test",
   "license": "MIT",
   "private": false,
-  "homepage": "https://yazanalbaiz.github.io/",
+  "homepage": "https://yazanalbaiz.github.io/hello",
   "dependencies": {
     "axios": "^0.18.0",
     "gh-pages": "^2.0.1",
