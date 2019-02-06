@@ -8,6 +8,10 @@ import Logo from '../static/img/WainNakelLogoMain.png';
 import * as actions from '../actions';
 
 
+(async () => {
+    await actions.setCoords();
+})();
+
 const mapStateToProps = state =>
     ({
         coords: state.coords,

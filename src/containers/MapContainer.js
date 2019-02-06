@@ -4,17 +4,23 @@ import { connect } from 'react-redux';
 import MapComponent from '../components/MapComponent';
 import * as actions from '../actions';
 
+(async () => {
+    await actions.setCoords();
+})();
 
 const mapStateToProps = state =>
     ({
         coords: state.coords,
-        suggestion: state.suggestion
+        suggestion: state.suggestion,
+        modalState: state.modalState
     })
     ;
 
 const mapDispatchToProps = dispatch => ({
     setCoords: () => dispatch(actions.setCoords()),
-    getSuggestion: (coords) => dispatch(actions.getSuggestion(coords))
+    getSuggestion: (coords) => dispatch(actions.getSuggestion(coords)),
+    openModal: () => dispatch(actions.openModal()),
+    closeModal: () => dispatch(actions.closeModal())
 });
 
 export default connect(
@@ -31,7 +37,14 @@ export default connect(
         render() {
             return (
                 <div>
-                    <MapComponent coords={this.props.coords} suggestion={this.props.suggestion} getSuggestion={this.props.getSuggestion} />
+                    <MapComponent
+                        openModal={this.props.openModal}
+                        closeModal={this.props.closeModal}
+                        modalState={this.props.modalState}
+                        coords={this.props.coords}
+                        suggestion={this.props.suggestion}
+                        getSuggestion={this.props.getSuggestion}
+                    />
                 </div>
             )
         }

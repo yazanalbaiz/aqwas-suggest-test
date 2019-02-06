@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Map, Marker, GoogleApiWrapper } from 'google-maps-react';
+import { Button } from 'react-bootstrap';
 
 import Header from '../components/Header';
 import InfoTab from '../components/InfoTab';
@@ -19,10 +20,21 @@ const gifStyle = {
     marginTop: '150px'
 }
 
-export class MapComponent extends Component {
+const suggestButton = {
+    position: 'absolute',
+    bottom: '70px',
+    zIndex: 3,
+    width: '100%',
+    textAlign: 'center'
+}
 
-    componentWillMount = async () => {
+export class MapComponent extends Component {
+    getSuggestion = async () => {
         await this.props.getSuggestion(this.props.coords);
+
+    }
+    componentWillMount = () => {
+        this.getSuggestion();
     }
 
     render() {
@@ -35,8 +47,20 @@ export class MapComponent extends Component {
                         rate={this.props.suggestion.data.rating}
                         cat={this.props.suggestion.data.cat}
                         link={this.props.suggestion.data.link}
+                        modalState={this.props.modalState}
+                        openModal={this.props.openModal}
+                        closeModal={this.props.closeModal}
+                        src={this.props.suggestion.data.image[0]}
+                        lat={this.props.suggestion.data.lat}
+                        lon={this.props.suggestion.data.lon}
                     />
-                ) : (<span></span>)}
+                ) : (<span></span>)
+                }
+                {this.props.suggestion.data ? (
+                    <div style={suggestButton}>
+                        <Button onClick={this.getSuggestion} variant="info">اقتراح آخر</Button>
+                    </div>
+                ) : ''}
 
                 {this.props.suggestion.data ? (
                     <Map

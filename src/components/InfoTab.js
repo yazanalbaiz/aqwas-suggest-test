@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Container, Row, Col } from 'react-bootstrap';
+import PhotoModal from '../containers/PhotoModal';
 
 
 const style = {
@@ -23,6 +24,7 @@ const row = {
 
 export default class InfoTab extends Component {
     render() {
+        const { lat, lon } = this.props;
         return (
             <div style={style}>
                 <Row style={row}>
@@ -39,19 +41,34 @@ export default class InfoTab extends Component {
                         </Row>
                         <Row>
                             <Col>
-                                <a href={this.props.link} target="_blank" rel="noopener noreferrer" title={`Show ${this.props.name} on foursquare`}>
+                                <a
+                                    href={`http://www.google.com/maps/place/${lat},${lon}`}
+                                    target="_blank" rel="noopener noreferrer"
+                                    title={`Show ${this.props.name} on Google Maps`}
+                                >
                                     <img
                                         width="20"
                                         height="20"
-                                        src={require('../static/img/FoursquareIcon.png')}
+                                        src={require('../static/img/GoogleMapsIcon.png')}
                                         alt="Photos Icon"
                                         style={centering}
                                     />
                                 </a>
                             </Col>
+                            <Col>
+                                <img
+                                    width="20"
+                                    height="20"
+                                    src={require('../static/img/PhotoIcon.png')}
+                                    alt="Photos Icon"
+                                    style={centering}
+                                    onClick={this.props.openModal}
+                                />
+                            </Col>
                         </Row>
                     </Container>
                 </Row>
+                <PhotoModal src={this.props.src} name={this.props.name} />
             </div>
 
         )
