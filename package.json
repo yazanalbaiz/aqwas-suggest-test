@@ -1,11 +1,13 @@
 {
-  "name": "redux-starter-yazan",
+  "name": "aqwas-suggest-test",
   "version": "1.1.0",
-  "repository": "https://github.com/yazanalbaiz/redux-starter-yazan/",
+  "repository": "https://github.com/yazanalbaiz/aqwas-suggest-test",
   "license": "MIT",
   "private": false,
+  "homepage": "https://yazanalbaiz.github.io/",
   "dependencies": {
     "axios": "^0.18.0",
+    "gh-pages": "^2.0.1",
     "google-maps-react": "^2.0.2",
     "lodash": "^4.17.10",
     "react": "^16.7.0",
@@ -25,7 +27,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "browserslist": [
     ">0.2%",
