@@ -1,12 +1,9 @@
 <h1 style="line-height:100px;">
-    Yazan's Aqwas Development Test
-    <div style="text-align:center;">
-        <img src="https://media.licdn.com/dms/image/C4D0BAQGz2TM05gTn3w/company-logo_200_200/0?e=2159024400&v=beta&t=UAsrl3Nwd9GZGNsDbn4KLgaxAGe3JYzPvcPFmzdVZCM" height=50 width=50>
-    </div>
+    Wain Nakel Clone
 
 </h1>
 
-This repo is for my development test at Aqwas.
+This repo is for a Wain Nakel clone using the Wain Nakel public api.
 
 It contains a simple web application using ReactJS and Redux.
 
